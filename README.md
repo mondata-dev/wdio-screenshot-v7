@@ -3,7 +3,7 @@
 
 
 Working properly with WebdriverIO > 7.0.0.
-This is based on the v5 port https://github.com/mondata-dev/wdio-screenshot-v5, which in turn is based on https://github.com/zinserjan/wdio-screenshot.
+This is based on the updated v5 port https://github.com/mondata-dev/wdio-screenshot-v5, which in turn is based on https://github.com/mjdch/wdio-screenshot-v5 and originally https://github.com/zinserjan/wdio-screenshot.
 
 ## Browser Support
 - Firefox
