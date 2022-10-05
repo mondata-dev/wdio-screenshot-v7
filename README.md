@@ -1,9 +1,9 @@
-# wdio-screenshot-v5
+# wdio-screenshot-v7
 > A WebdriverIO plugin. Additional commands for taking screenshots with WebdriverIO.
 
 
-Working properly with WebdriverIO > 5.0.0. Old repository: https://github.com/zinserjan/wdio-screenshot ,
-this is only port for new version of WebdriverIO
+Working properly with WebdriverIO > 7.0.0.
+This is based on the v5 port https://github.com/mondata-dev/wdio-screenshot-v5, which in turn is based on https://github.com/zinserjan/wdio-screenshot.
 
 ## Browser Support
 - Firefox
