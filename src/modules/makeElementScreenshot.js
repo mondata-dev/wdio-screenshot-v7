@@ -6,7 +6,7 @@ import afterScreenshot from './afterScreenshot';
 
 import getElements from '../utils/getElements';
 import groupBoundingRect from '../utils/groupBoundingRect';
-import getBoundingRects from '../scripts/getBoundingRects';
+import getBoundingRect from '../scripts/getBoundingRect';
 
 const log = debug('wdio-screenshot:makeElementScreenshot');
 
@@ -20,7 +20,11 @@ export default async function makeElementScreenshot(browser, elementSelector, op
   // get bounding rect of elements
 
   const elements = await getElements(elementSelector);
-  const boundingRects = await browser.execute(getBoundingRects, elements);
+
+  const boundingRects = [];
+  for (const elem of elements) {
+    boundingRects.push(await browser.execute(getBoundingRect, elem))
+  }
 
   const boundingRect = groupBoundingRect(boundingRects);
 
