@@ -1,8 +1,8 @@
 import debug from 'debug';
 
 import scrollbars from '../scripts/scrollbars';
-import removeElements from '../scripts/removeElements';
-import hideElements from '../scripts/hideElements';
+import removeElement from '../scripts/removeElement';
+import hideElement from '../scripts/hideElement';
 
 import getElements from '../utils/getElements';
 
@@ -16,7 +16,10 @@ export default async function afterScreenshot(browser, options) {
 
         for (let i = 0; i < options.hide.length; i++) {
             let elements = await getElements(options.hide[i]);
-            await browser.execute(hideElements, elements, false);
+            // browser.execute cannot convert array of elements to corresponding DOM element
+            for (const elem of elements) {
+              await browser.execute(hideElement, elem, false);
+            }
         }
     }
 
@@ -26,7 +29,10 @@ export default async function afterScreenshot(browser, options) {
 
       for (let i = 0; i < options.remove.length; i++) {
         let elements = await getElements(options.remove[i]);
-        await browser.execute(removeElements, elements, false);
+        // browser.execute cannot convert array of elements to corresponding DOM element
+        for (const elem of elements) {
+          await browser.execute(removeElement, elem, false);
+        }
       }
     }
 
