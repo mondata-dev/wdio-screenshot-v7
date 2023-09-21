@@ -25,7 +25,9 @@ export default async function beforeScreenshot(browser, options) {
     for (let i = 0; i < options.hide.length; i++) {
       let elements = await getElements(options.hide[i]);
       // browser.execute cannot convert array of elements to corresponding DOM element
-      elements.forEach(async elem => await browser.execute(hideElement, elem, true));
+      for (const elem of elements) {
+        await browser.execute(hideElement, elem, true);
+      }
     }
   }
 
@@ -36,7 +38,9 @@ export default async function beforeScreenshot(browser, options) {
     for (let i = 0; i < options.remove.length; i++) {
       let elements = await getElements(options.remove[i]);
       // browser.execute cannot convert array of elements to corresponding DOM element
-      elements.forEach(async elem => await browser.execute(removeElement, elem, true));
+      for (const elem of elements) {
+        await browser.execute(removeElement, elem, true);
+      }
     }
   }
 
