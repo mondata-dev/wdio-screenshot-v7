@@ -2,9 +2,9 @@ import debug from 'debug';
 
 import scroll from '../scripts/scroll';
 import scrollbars from '../scripts/scrollbars';
-import removeElements from '../scripts/removeElements';
+import removeElement from '../scripts/removeElement';
 import triggerResize from '../scripts/triggerResize';
-import hideElements from '../scripts/hideElements';
+import hideElement from '../scripts/hideElement';
 
 import getElements from '../utils/getElements';
 
@@ -24,18 +24,19 @@ export default async function beforeScreenshot(browser, options) {
 
     for (let i = 0; i < options.hide.length; i++) {
       let elements = await getElements(options.hide[i]);
-      await browser.execute(hideElements, elements, true);
+      // browser.execute cannot convert array of elements to corresponding DOM element
+      elements.forEach(async elem => await browser.execute(hideElement, elem, true));
     }
   }
 
-  // TODO
   // remove elements
   if (Array.isArray(options.remove) && options.remove.length) {
     log('remove the following elements: %s', options.remove.join(', '));
 
     for (let i = 0; i < options.remove.length; i++) {
       let elements = await getElements(options.remove[i]);
-      await browser.execute(removeElements, elements, true);
+      // browser.execute cannot convert array of elements to corresponding DOM element
+      elements.forEach(async elem => await browser.execute(removeElement, elem, true));
     }
   }
 
