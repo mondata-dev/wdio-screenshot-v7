@@ -1,4 +1,4 @@
-export default function hideElements(elems, flag = true) {
+export default function removeElements(elems, flag = true) {
 
   if (flag) {
     return elems.forEach(ele => {
