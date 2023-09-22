@@ -1,6 +1,6 @@
 {
   "name": "wdio-screenshot-v7",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Screenshot commands for WebdriverIO 7",
   "main": "lib/index.js",
   "files": [
@@ -21,7 +21,7 @@
     "selenium-install": "selenium-standalone install",
     "server": "http-server test/fixture/web -p 3000",
     "deploy-integration-tests": "gh-pages -d test/fixture/web",
-    "prepublish": "npm run build",
+    "prepare": "npm run build",
     "release": "np"
   },
   "repository": {
