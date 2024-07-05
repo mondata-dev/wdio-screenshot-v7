@@ -1,6 +1,6 @@
 {
   "name": "wdio-screenshot-v8",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "Screenshot commands for WebdriverIO 8",
   "main": "lib/index.js",
   "files": [
