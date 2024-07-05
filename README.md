@@ -1,9 +1,9 @@
-# wdio-screenshot-v7
+# wdio-screenshot-v8
 > A WebdriverIO plugin. Additional commands for taking screenshots with WebdriverIO.
 
 
-Working properly with WebdriverIO > 7.0.0.
-This is based on the updated v5 port https://github.com/mondata-dev/wdio-screenshot-v5, which in turn is based on https://github.com/mjdch/wdio-screenshot-v5 and originally https://github.com/zinserjan/wdio-screenshot.
+Working properly with WebdriverIO > 8.0.0.
+This is based on the updated v7 port https://github.com/mondata-dev/wdio-screenshot-v7, which in turn is based on https://github.com/mjdch/wdio-screenshot-v5 and originally https://github.com/zinserjan/wdio-screenshot.
 
 ## Browser Support
 - Firefox
@@ -17,7 +17,7 @@ This is based on the updated v5 port https://github.com/mondata-dev/wdio-screens
 Install wdio-screenshot via NPM as usual:
 
 ```sh
-$ npm install wdio-screenshot-v5 --save-dev
+$ npm install wdio-screenshot-v8 --save-dev
 ```
 
 
@@ -30,7 +30,7 @@ Setup wdio-screenshot by adding a `wdio-screenshot` key to the service section o
 More information [Custom Services](https://webdriver.io/docs/customservices.html)
 
 ```js
-const WdioScreenshot = require('wdio-screenshot-v5');
+const WdioScreenshot = require('wdio-screenshot-v8');
 
 // wdio.conf.js
 exports.config = {
